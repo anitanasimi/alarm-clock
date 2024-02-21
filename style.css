@@ -1,0 +1,134 @@
+.clock {
+  font-size: 3rem;
+  color: #8e44ad; /* Changed text color to purple */
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 100px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body,
+.alarm-card,
+.alarm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  padding: 0 10px;
+  min-height: 100vh;
+  background: black;
+}
+
+.alarm-card {
+  width: 440px;
+  padding: 30px 30px 38px;
+  background: black;
+  border-radius: 10px;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.alarm-card img {
+  max-width: 103px;
+}
+
+.alarm-card h1 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0;
+  color: #8e44ad;
+}
+
+.alarm-card .alarm {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.alarm.disable {
+  cursor: no-drop;
+}
+
+.alarm .column {
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #8e44ad;
+  width: calc(100% / 3 - 5px);
+}
+
+.alarm.disable .column {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.column select {
+  width: 100%;
+  height: 53px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 19px;
+  color: #8e44ad;
+}
+
+.alarm-card button {
+  width: 100px;
+  height: 50px;
+  border-color: #8e44ad;
+  border-radius: 10px;
+  color: #8e44ad;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 150ms ease-in-out;
+  margin-top: 25px;
+  background-color: black;
+}
+
+.alarm-card button:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #8e44ad;
+  z-index: -1;
+  transition: width 150ms ease-in-out;
+}
+
+.alarm-card button:hover {
+  color: black;
+}
+
+.alarm-card button:hover:after {
+  width: 110%;
+}
